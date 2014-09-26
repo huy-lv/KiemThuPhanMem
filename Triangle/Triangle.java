@@ -17,3 +17,4 @@ public class Triangle {
 		return 0;
 	}
 }
+//Chưa xử lý trường hợp nhập ngày tháng ko hợp lệ

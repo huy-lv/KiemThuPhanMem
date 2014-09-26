@@ -7,17 +7,15 @@ public class ClassDate {
 		this.month = month;
 		this.year = year;
 	}
-	//1 la nam nhuan
-	//-1 la nam thuong
-	int checkNamNhuan(){
+	boolean isNamNhuan(){
 		if(year%4 == 0){
 			if(year%100 == 0){
 				int temp = year/100;
-				if(temp % 4 != 0)	return -1;
+				if(temp % 4 != 0)	return false;
 			}
-			return 1;
+			return true;
 		}
-		return -1;
+		return false;
 	}
 	public ClassDate NextDate(){
 		switch(month){
@@ -32,7 +30,7 @@ public class ClassDate {
 				if(day == 30)	return new ClassDate(1, month+1, year);
 				return null;
 			case 2:
-				if(checkNamNhuan() == 1){
+				if(isNamNhuan()){
 					if(1 <= day && day <= 28)	return new ClassDate(day+1, month, year);
 					if(day == 29)	return new ClassDate(1, month+1, year);
 				}
